@@ -1,0 +1,114 @@
+body {
+    font-family: Arial;
+    background-color: #fff4ec;
+    color: black;
+    margin: 0;
+    text-align: center;
+}
+
+.header button {
+    background-color: black;
+}
+
+.header {
+    background-color: #F47B20;
+    color: white;
+    padding: 10px;
+    border-bottom: 5px solid black;
+}
+
+.box {
+    background-color: white;
+    border: 2px solid black;
+    width: 90%;
+    max-width: 350px;
+    margin: 20px auto;
+    padding: 10px;
+}
+
+h2 {
+    color: #F47B20;
+}
+
+input, select {
+    width: 90%;
+    padding: 5px;
+}
+
+button {
+    background-color: #F47B20;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    margin: 3px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: black;
+}
+
+.card {
+    border: 1px solid black;
+    margin: 10px;
+    padding: 5px;
+}
+
+.small {
+    font-size: 12px;
+}
+
+.chatBox {
+    max-width: 400px;
+    margin: 10px auto;
+    border: 2px solid black;
+}
+
+.chatTop {
+    background-color: #F47B20;
+    color: white;
+    padding: 15px;
+    text-align: left;
+}
+
+.chatTop a {
+    color: white;
+    margin-right: 15px;
+}
+
+#messages {
+    background-color: white;
+    height: 60vh;
+    overflow-y: auto;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.myMsg, .otherMsg {
+    max-width: 75%;
+    margin: 4px 0;
+    padding: 8px 12px;
+    border-radius: 10px;
+    text-align: left;
+    overflow-wrap: anywhere;
+}
+
+.myMsg {
+    align-self: flex-end;
+    background-color: #ffd9b8;
+}
+
+.otherMsg {
+    align-self: flex-start;
+    background-color: #eeeeee;
+}
+
+.chatBottom {
+    display: flex;
+    padding: 5px;
+}
+
+.chatBottom input {
+    flex: 1;
+}

@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Study Mate LPU</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- login page -->
+    <div id="loginPage" class="page">
+    <div class="header">
+        <h1>Study Mate LPU</h1>
+        <p>For LPU Students</p>
+    </div>
+
+    <div class="box">
+        <h2>Login</h2>
+
+        <p>Registration Number</p>
+        <input type="text" id="regno">
+
+        <p>Password</p>
+        <input type="password" id="password">
+
+        <br><br>
+        <button onclick="login()">Login</button>
+        <button onclick="demoLogin()">Try Demo</button>
+
+        <p>New here? <a href="#" onclick="showPage('registerPage'); return false">Register</a></p>
+        <p class="small">Student project, not an official LPU website. Do not use your UMS password.</p>
+    </div>
+
+    <div class="box">
+        <h2>About</h2>
+        <p>Many students want a study partner but do not know how to find one.
+        This website matches you by subject, free time, study place and study style.
+        You get 1 point for each same choice, and best matches come first.</p>
+    </div>
+
+    
+    </div>
+
+    <!-- register page -->
+    <div id="registerPage" class="page" style="display: none">
+    <div class="header">
+        <h1>Study Mate LPU</h1>
+        <p>For LPU Students</p>
+    </div>
+
+    <div class="box">
+        <h2>Register</h2>
+
+        <p>Name</p>
+        <input type="text" id="name">
+
+        <p>Registration Number (8 digits)</p>
+        <input type="text" id="rregno">
+
+        <p>Make a Password</p>
+        <input type="password" id="rpassword">
+
+        <p>Confirm Password</p>
+        <input type="password" id="password2">
+
+        <p>Course</p>
+        <select id="rcourse">
+            <option>B.Tech CSE</option>
+            <option>BCA</option>
+            <option>MCA</option>
+            <option>BBA</option>
+            <option>MBA</option>
+            <option>B.Pharm</option>
+        </select>
+
+        <p>Subject you want to study</p>
+        <select id="rsubject">
+            <option>Maths</option>
+            <option>C Programming</option>
+            <option>Python</option>
+            <option>DSA</option>
+            <option>DBMS</option>
+            <option>English</option>
+        </select>
+
+        <p>Free Time</p>
+        <select id="rtime">
+            <option>Morning</option>
+            <option>Afternoon</option>
+            <option>Evening</option>
+            <option>Night</option>
+        </select>
+
+        <p>Study Place</p>
+        <select id="rplace">
+            <option>Library</option>
+            <option>Uni Mall</option>
+            <option>Hostel Common Room</option>
+            <option>Academic Block</option>
+            <option>Online</option>
+        </select>
+
+        <p>How you like to study</p>
+        <select id="rstyle">
+            <option>Quiet study</option>
+            <option>Discussion</option>
+            <option>Solving questions</option>
+        </select>
+
+        <br><br>
+        <button onclick="register()">Register</button>
+
+        <p><a href="#" onclick="showPage('loginPage'); return false">Back to Login</a></p>
+        <p class="small">Student project, not an official LPU website. Do not use your UMS password.</p>
+    </div>
+
+    
+    </div>
+
+    <!-- home page -->
+    <div id="homePage" class="page" style="display: none">
+    <div class="header">
+        <h1>Study Mate LPU</h1>
+        <p id="welcome"></p>
+        <button onclick="logout()">Logout</button>
+    </div>
+
+    <div class="box">
+        <h2>My Chats</h2>
+        <div id="chats"></div>
+    </div>
+
+    <div class="box">
+        <h2>My Choices</h2>
+        <p>Course</p>
+        <select id="course">
+            <option>B.Tech CSE</option>
+            <option>BCA</option>
+            <option>MCA</option>
+            <option>BBA</option>
+            <option>MBA</option>
+            <option>B.Pharm</option>
+        </select>
+        <p>Subject</p>
+        <select id="subject">
+            <option>Maths</option>
+            <option>C Programming</option>
+            <option>Python</option>
+            <option>DSA</option>
+            <option>DBMS</option>
+            <option>English</option>
+        </select>
+        <p>Free Time</p>
+        <select id="time">
+            <option>Morning</option>
+            <option>Afternoon</option>
+            <option>Evening</option>
+            <option>Night</option>
+        </select>
+        <p>Study Place</p>
+        <select id="place">
+            <option>Library</option>
+            <option>Uni Mall</option>
+            <option>Hostel Common Room</option>
+            <option>Academic Block</option>
+            <option>Online</option>
+        </select>
+        <p>How you like to study</p>
+        <select id="style">
+            <option>Quiet study</option>
+            <option>Discussion</option>
+            <option>Solving questions</option>
+        </select>
+        <br><br>
+        <button onclick="saveChoices()">Save</button>
+    </div>
+
+    <div class="box">
+        <h2>Your Study Partners</h2>
+        <div id="list"></div>
+    </div>
+
+    <div class="box">
+        <h2>Blocked People</h2>
+        <div id="blocked"></div>
+    </div>
+
+    
+    </div>
+
+    <!-- chat page -->
+    <div id="chatPage" class="page" style="display: none">
+    <div class="chatBox">
+        <div class="chatTop">
+            <a href="#" onclick="showPage('homePage'); return false">&larr; Back</a>
+            <b id="chatName"></b>
+        </div>
+        <div id="messages"></div>
+        <div class="chatBottom">
+            <input type="text" id="msg" placeholder="Type a message" onkeydown="if (event.key == 'Enter') sendMessage()">
+            <button onclick="sendMessage()">Send</button>
+        </div>
+    </div>
+
+    
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
